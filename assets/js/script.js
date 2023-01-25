@@ -3,8 +3,9 @@ const fruits = ["Acai", "Durian", "Mangosteen", "Rambutan", "Kiwano", "Gooseberr
 const vegetables = ["Artichoke", "Bok Choy", "Celeriac", "Eggplant", "Fennel", "Jicama", "Kohlrabi", "Leeks", "Nopales", "Okra", "Parsnips", "Radicchio", "Scallions", "Turnips", "Carrots", "Cauliflower"]
 
 let displayedItem;
-let rightScore = 0; // variable to store the number of correct answers
-let wrongScore = 0; // variable to store the number of incorrect answers
+// variable to store the numbers
+let rightScore = 0;
+let wrongScore = 0;
 
 // function to randomly display a fruit or vegetable
 function startGame() {
@@ -13,8 +14,6 @@ function startGame() {
     else
         displayVegetable();
 }
-
-
 
 //display a random fruit from the fruits array
 function displayFruit() {
@@ -30,17 +29,15 @@ function displayVegetable() {
     document.getElementById("quiz-question").innerHTML = vegetables[index];
 }
 
-
-
 // check if the user has won the game
 function checkVictory() {
     if (rightScore === 10) {
-        document.getElementById('victory-message').innerHTML = 'YOU WON!'; 
+        document.getElementById('victory-message').innerHTML = 'YOU WON!';
         resetScore()
     }
 }
 
-// check if the user has lost the game
+// function to check if the user has lost the game
 function checkLoss() {
     if (wrongScore === 10) {
         document.getElementById('loss-message').innerHTML = 'YOU LOST!';
@@ -48,16 +45,21 @@ function checkLoss() {
     }
 }
 
+// function to reset the score and update the score display
 function resetScore() {
-
-
+    document.getElementById("right-answer-score").innerHTML = 0;
+    rightScore = 0;
+    document.getElementById("wrong-answer-score").innerHTML = 0;
+    wrongScore = 0;
 }
 
-
+// function to reset the victory and loss message
 function resetMessage() {
-
+    if (wrongScore === 0 && rightScore === 0) {
+        document.getElementById('loss-message').innerHTML = '';
+        document.getElementById('victory-message').innerHTML = '';
+    }
 }
-
 
 // function to increment the users score
 function checkAnswer(item) {
@@ -68,8 +70,6 @@ function checkAnswer(item) {
         wrongScore = wrongScore + 1;
         document.getElementById("wrong-answer-score").innerHTML = wrongScore;
     }
-
-
     startGame();
 }
 
@@ -77,13 +77,14 @@ function checkAnswer(item) {
 window.onload = startGame;
 
 document.getElementById("fruit-button").addEventListener("click", function () {
+    resetMessage()
     checkAnswer("fruit");
     checkVictory()
     checkLoss()
-
 })
 
 document.getElementById("vegie-button").addEventListener("click", function () {
+    resetMessage()
     checkAnswer("vegie");
     checkVictory()
     checkLoss()
