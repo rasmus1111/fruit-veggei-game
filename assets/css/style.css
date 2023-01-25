@@ -38,12 +38,30 @@ h3{
     color: white;
     border: 2px solid black;
 }
+    /*style buttons */
+button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    padding: 20px 40px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #3657a4;
+    color: white;
+}
+
    /*  hover function */
 .play-button:hover {
     background-color: rgb(105, 220, 238); 
     color: rgb(7, 6, 6);
     
-}    
+}  
+button:hover {
+    background-color: rgb(105, 220, 238); 
+    color: rgb(7, 6, 6);
+    
+}  
+
+
   /*style text content*/
 .content{
     font-family: 'Poppins', sans-serif;
