@@ -2,7 +2,9 @@
 const  fruits = ["Acai", "Durian", "Mangosteen", "Rambutan", "Kiwano", "Gooseberry", "Lychee", "Persimmon", "Pomegranate", "Soursop", "Apple", "Banana", "Cherry", "Grape", "Orange"];
 const  vegetables = ["Artichoke", "Bok Choy", "Celeriac", "Eggplant", "Fennel", "Jicama", "Kohlrabi", "Leeks", "Nopales", "Okra", "Parsnips", "Radicchio", "Scallions", "Turnips", "Carrots","Cauliflower"]
 
-
+let displayedItem;
+let rightScore = 0; // variable to store the number of correct answers
+let wrongScore = 0; // variable to store the number of incorrect answers
 
 // function to randomly display a fruit or vegetable
 function startGame(){
@@ -52,14 +54,29 @@ function displayFruit(){
  }
 
 
-function checkAnswer(){
- 
-}
+// function to increment the users score
+function checkAnswer(item){
+    if(displayedItem === item){
+      rightScore = rightScore + 1; 
+      document.getElementById("right-answer-score").innerHTML = rightScore;
+    }else{
+      wrongScore = wrongScore + 1;
+      document.getElementById("wrong-answer-score").innerHTML = wrongScore; 
+    }
+  
+  
+    startGame(); 
+  }
 
+// start the game when the page loads
+window.onload = startGame;
 
 document.getElementById("fruit-button").addEventListener("click", function(){ 
-startGame()})
+   checkAnswer("fruit"); 
+
+})
 
 document.getElementById("vegie-button").addEventListener("click", function(){
-startGame()})
+    checkAnswer("vegie");
+})
 
