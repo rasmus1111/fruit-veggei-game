@@ -26,6 +26,30 @@ h3{
     font-weight: bolder;
 }
 
+
+#game-questains {
+    color: #3657a4; 
+    padding: 20px;
+}
+
+#game-questains span {
+    font-size: 40px;
+    font-weight: bold;
+}
+ 
+#victory-message{
+    font-size: 30px;
+    color: green;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+#loss-message{
+    font-size: 30px;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
 /* style span into button */
 .play-button {
     font-family: 'Poppins',sans-serif;
