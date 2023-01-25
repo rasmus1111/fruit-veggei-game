@@ -14,14 +14,14 @@ function startGame(){
 
 
 
-// function to display a random fruit from the fruits array
+//display a random fruit from the fruits array
 function displayFruit(){
     displayedItem = 'fruit'; 
     var index = Math.floor(Math.random()*fruits.length); 
     document.getElementById("quiz-question").innerHTML = fruits[index]; 
   }
   
-// function to display a random vegetable from the vegetables array
+//display a random vegetable from the vegetables array
   function displayVegetable(){
     displayedItem = 'vegie'; 
     var index = Math.floor(Math.random()*vegetables.length); 
@@ -57,7 +57,9 @@ function checkAnswer(){
 }
 
 
+document.getElementById("fruit-button").addEventListener("click", function(){ 
+startGame()})
 
-window.onload = startGame;
-
+document.getElementById("vegie-button").addEventListener("click", function(){
+startGame()})
 
