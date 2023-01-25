@@ -32,20 +32,18 @@ function displayVegetable() {
 
 
 
-// check if the user has won the game by getting 10 right
+// check if the user has won the game
 function checkVictory() {
     if (rightScore === 10) {
-        document.getElementById('victory-message').innerHTML = 'YOU WON!';
-        console.log('i am showing because i won')
+        document.getElementById('victory-message').innerHTML = 'YOU WON!'; 
         resetScore()
     }
 }
 
-// check if the user has lost the game by getting 10 wrong
+// check if the user has lost the game
 function checkLoss() {
     if (wrongScore === 10) {
         document.getElementById('loss-message').innerHTML = 'YOU LOST!';
-        console.log('losser!')
         resetScore()
     }
 }
