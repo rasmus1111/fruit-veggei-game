@@ -69,3 +69,20 @@ button:hover {
     font-weight: bolder;
    
 }
+.results{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: black;
+
+}   
+/* style score */
+#right-answer-score{
+    color: green;
+    font-size: 40px;
+    font-weight: bolder;
+}
+#wrong-answer-score{
+    color: red;
+    font-size: 40px;
+    font-weight: bolder;
+}
