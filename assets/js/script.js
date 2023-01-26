@@ -29,7 +29,7 @@ function displayVegetable() {
     document.getElementById("quiz-question").innerHTML = vegetables[index];
 }
 
-// check if the user has won the game
+//  function check if the user has won the game
 function checkVictory() {
     if (rightScore === 10) {
         document.getElementById('victory-message').innerHTML = 'YOU WON!';
@@ -73,8 +73,9 @@ function checkAnswer(item) {
     startGame();
 }
 
-// start the game when the page loads
+// start the game when the page loads 
 window.onload = startGame;
+// GEt element by id from google
 
 document.getElementById("fruit-button").addEventListener("click", function () {
     resetMessage();
