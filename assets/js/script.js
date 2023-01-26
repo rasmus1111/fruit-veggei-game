@@ -1,6 +1,6 @@
 // Declare two arrays, one for fruits and one for vegetables
 const fruits = ["Acai", "Durian", "Mangosteen", "Rambutan", "Kiwano", "Gooseberry", "Lychee", "Persimmon", "Pomegranate", "Soursop", "Apple", "Banana", "Cherry", "Grape", "Orange"];
-const vegetables = ["Artichoke", "Bok Choy", "Celeriac", "Eggplant", "Fennel", "Jicama", "Kohlrabi", "Leeks", "Nopales", "Okra", "Parsnips", "Radicchio", "Scallions", "Turnips", "Carrots", "Cauliflower"]
+const vegetables = ["Artichoke", "Bok Choy", "Celeriac", "Eggplant", "Fennel", "Jicama", "Kohlrabi", "Leeks", "Nopales", "Okra", "Parsnips", "Radicchio", "Scallions", "Turnips", "Carrots", "Cauliflower"];
 
 let displayedItem;
 // variable to store the numbers
@@ -33,7 +33,7 @@ function displayVegetable() {
 function checkVictory() {
     if (rightScore === 10) {
         document.getElementById('victory-message').innerHTML = 'YOU WON!';
-        resetScore()
+        resetScore();
     }
 }
 
@@ -41,7 +41,7 @@ function checkVictory() {
 function checkLoss() {
     if (wrongScore === 10) {
         document.getElementById('loss-message').innerHTML = 'YOU LOST!';
-        resetScore()
+        resetScore();
     }
 }
 
@@ -77,15 +77,15 @@ function checkAnswer(item) {
 window.onload = startGame;
 
 document.getElementById("fruit-button").addEventListener("click", function () {
-    resetMessage()
+    resetMessage();
     checkAnswer("fruit");
-    checkVictory()
-    checkLoss()
-})
+    checkVictory();
+    checkLoss();
+});
 
 document.getElementById("vegie-button").addEventListener("click", function () {
-    resetMessage()
+    resetMessage();
     checkAnswer("vegie");
-    checkVictory()
-    checkLoss()
-})
+    checkVictory();
+    checkLoss();
+});
